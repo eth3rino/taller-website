@@ -1,0 +1,63 @@
+<div class="contactanos-wrapper">
+    <div class="contact-methods">
+        <a class="whatsapp" href="https://wa.me/5491141874176" target="_blank" style="--clr: #3dc24f">
+            <i class="fa-brands fa-whatsapp"></i> 
+            <div class="contact-information">
+                <div class="contact-information-top">
+                    <span>WhatsApp - 11 4187-4176</span>
+                </div>
+                <div class="contact-schedules">
+                    <span>Lunes a Viernes 9.00-17.00</span>
+                    <span>Sabados 9.00-13.00</span>
+                </div>
+            </div>
+        </a>
+        <a class="instagram" href="https://www.instagram.com/la.elianteleria/" target='_blank' style="--clr: #f30a90">
+            <i class="fa-brands fa-instagram"></i> 
+            <div class="contact-information">
+                <div class="contact-information-top">
+                    <span>Instagram - la.elianteleria</span>
+                </div>
+                <div class="contact-schedules">
+                    <span>Lunes a Viernes 9.00-17.00</span>
+                    <span>Sabados 9.00-13.00</span>
+                </div>
+            </div>
+        </a>
+        <a class="facebook" href="https://www.facebook.com/la.elianteleria" target='_blank' style="--clr: #0865ff">
+            <i class="fa-brands fa-facebook"></i> 
+            <div class="contact-information">
+                <div class="contact-information-top">
+                    <span>Facebook - La Elianteleria</span>
+                </div>
+                <div class="contact-schedules">
+                    <span>Lunes a Viernes 9.00-17.00</span>
+                    <span>Sabados 9.00-13.00</span>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="contact-form">
+        <form [formGroup]="contactForm">
+            <div class="form-title">
+                Envianos un correo!
+            </div>
+            <div class="input-container">
+                <label for="nombre">Nombre</label>
+                <input formControlName="nombre" type="text" id="nombre" name="nombre">
+            </div>
+            <div class="input-container">
+                <label for="telefono">Telefono</label>
+                <input formControlName="telefono" type="text" id="telefono" name="telefono">
+            </div>
+            <div class="input-container">
+                <label for="asunto">Asunto</label>
+                <input formControlName="asunto" type="text" id="asunto" name="asunto">
+            </div>
+            <div class="input-container">
+                <textarea formControlName="mensaje" type="text" id="mensaje" name="mensaje"></textarea>
+            </div>
+            <button type="button" (click)="submitForm()">Enviar</button>
+        </form>
+    </div>
+</div>

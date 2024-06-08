@@ -1,0 +1,195 @@
+:host {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.carousel-wrapper {
+    position: relative;
+    min-height: 760px;
+    height: 80%;
+    overflow: hidden;
+    touch-action: none; /* Prevent touch scrolling */
+}
+
+.carousel-wrapper .images {
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 760px;
+    display: flex;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-wrapper .images .box {
+    background-image: var(--url);
+    height: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    background-size: cover;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.carousel-wrapper .images .box:hover {
+    scale: 1.05;
+}
+
+.carousel-wrapper button {
+    position: absolute;
+    height: 100%;
+    width: 80px;
+    background-color: #0009;
+    border: none;
+    z-index: 1000;
+    opacity: 0;
+    transition: .25s;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.carousel-wrapper button.prev {
+    left: 0;
+    top: 50%;
+}
+
+.carousel-wrapper button.next {
+    right: 0;
+    top: 50%;
+}
+
+.carousel-wrapper:hover button {
+    opacity: 1;
+}
+
+.carousel-wrapper button i {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.carousel-wrapper .indicators {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+}
+
+.carousel-wrapper .indicators .indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid black;
+    margin: 15px;
+    align-items: center;
+    transition: .25s;
+    cursor: pointer;
+}
+
+.carousel-wrapper .indicators .indicator.active-indicator {
+    background-color: cyan;
+}
+
+.trabajos-button {
+    display: none; /* Hidden by default, shown on mobile */
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: 0.25s;
+}
+
+.trabajos-button:hover {
+    background-color: #f0f0f0;
+}
+
+.ubicacion-boton {
+    position: absolute;
+    left: 50%;
+    bottom: -55px;
+    transform: translateX(-50%);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.ubicacion-boton:hover {
+    scale: 1.1;
+}
+
+.ubicacion-boton::before {
+    position: absolute;
+    font-family: 'Font Awesome 5 Free';
+    content: '\f0d7';
+    left: 50%;
+    bottom: -5px;
+    transform: translateX(-70%);
+}
+
+.ubicacion-boton:hover::before {
+    animation: downhover 1s infinite;
+}
+
+@keyframes downhover {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(5px); }
+    100% { transform: translateY(0px); }
+}
+
+.ubicacion-boton.scrolled {
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .carousel-wrapper {
+        min-height: 500px;
+        height: 60%;
+    }
+
+    .carousel-wrapper .images {
+        height: 500px;
+    }
+    .carousel-wrapper .images .box{
+        background-position: center;
+    }
+
+    .carousel-wrapper button {
+        width: 50px;
+    }
+
+    .carousel-wrapper button i {
+        font-size: 1.2rem;
+    }
+
+    .trabajos-button {
+        display: block; /* Show on mobile */
+    }
+
+    .carousel-wrapper .indicators {
+        display: none; /* Hide indicators on mobile */
+    }
+
+    .ubicacion-boton {
+        bottom: -50px;
+        display: none;
+    }
+    .carousel-wrapper button
+    {
+        opacity: 1;
+        width: 50px;
+        height: 50px;
+    }
+}

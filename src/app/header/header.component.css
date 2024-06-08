@@ -1,0 +1,170 @@
+header {
+    width: 100%;
+    height: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+header * {
+    user-select: none;
+}
+
+header .logo {
+    width: 40%;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 2rem;   
+}
+
+header .logo .logo-link .main-word {
+    background: linear-gradient(to right, cyan, blue);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .5s;
+    color: black;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    background-color: black;
+}
+
+header .logo .logo-link {
+    margin-left: 40px;
+    height: 60px;
+    width: 280px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header .logo .logo-link:hover .main-word {
+    color: transparent;
+    transition: .35s;
+    background-size: 100% 100%;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+}
+
+header .logo .logo-link.active-link span.main-word {
+    color: transparent;
+    transition: .35s;
+    background-size: 100% 100%;
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+}
+
+header .logo .logo-link .secondary-text {
+    font-size: 1rem;
+    pointer-events: none;
+    letter-spacing: 15px;
+    position: relative;
+    left: 6px;
+    bottom: 15px;
+}
+
+header nav {
+    display: flex;
+    padding: 20px 30px;
+}
+
+header nav a {
+    margin: 20px 25px 20px;
+    text-transform: uppercase;
+    font-family: 'Poppins';
+    font-weight: 600;
+    color: black;
+    text-decoration: none;
+    background: linear-gradient(to right, cyan, blue);
+    background-size: 0% 3px;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transition: .25s;
+}
+
+header nav a.active-link {
+    background-size: 100% 3px;
+}
+
+header nav a:hover {
+    background-size: 100% 3px;
+}
+
+header .hamburger-menu {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+    header .logo .logo-link {
+        font-size: 1.5rem;
+        padding-top: 10px;
+        margin: 30px;
+        width: 200px;
+    }
+
+    header .logo .logo-link .secondary-text {
+        font-size: .8rem;
+        letter-spacing: 7px;
+        bottom: 10px;
+    }
+
+    header nav {
+        height: 0px;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 10000;
+        flex-direction: column;
+        position: absolute;
+        transition: .25s;
+        top: 100px;
+        width: 100%;
+        background-color: white;
+        box-shadow: none;
+    }
+
+    header nav a
+    {
+        background-clip: text;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+    }
+    header nav a.active-link
+    {
+        background-size: 100% 100%;
+        background-clip: text;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+    }
+    header nav a:hover{
+        background-size: 100% 100%;
+    }
+
+
+
+    header nav.open {
+        display: flex;
+        z-index: 10000;
+        height: 150px;
+        pointer-events: all;
+        border-bottom: 2px solid black;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+    }
+
+    header .hamburger-menu {
+        display: block;
+        margin-right: 30px;
+    }
+}

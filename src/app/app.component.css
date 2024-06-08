@@ -1,0 +1,12 @@
+.host {
+    display: block;
+    position: relative;
+    width: 100%;
+    /* overflow-x: hidden; */
+  }
+
+router-outlet
+{
+  overflow-x: hidden;
+  height: 0px !important;
+}

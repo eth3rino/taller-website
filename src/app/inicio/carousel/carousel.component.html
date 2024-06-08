@@ -1,0 +1,18 @@
+<div class="carousel-wrapper" #carouselWrapper>
+    <button class="prev" (click)="prevImage()"><i class="fa-solid fa-play fa-rotate-180"></i></button>
+    <div class="images" #carousel>
+        <div *ngFor="let slide of slides, let i = index" class="box" [style.background-color]="slide.color" [ngStyle]="{'background-image': 'url(' + slide.imageUrl + ')'}" (click)="navigateToTrabajos(slide.trabajosSlide)">
+        </div>
+    </div>
+    <button class="next" (click)="nextImage()"><i class="fa-solid fa-play"></i></button>
+    <div class="indicators">
+        <span 
+        *ngFor="let indicator of slides, let i = index" 
+        class="indicator"
+        [class.active-indicator]="currentIndex == i + 1" 
+        (click)="toSlide(i + 1)"
+        ></span>
+    </div>
+</div>
+<button class="trabajos-button" (click)="navigateToTrabajos(0)">Nuestros trabajos</button>
+<div class="ubicacion-boton" [class.scrolled]="isHidden" (click)="scrollToUbicacion()">Donde estamos?</div>

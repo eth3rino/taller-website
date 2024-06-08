@@ -1,0 +1,234 @@
+
+.contactanos-wrapper
+{
+    width: 100%;
+    height: 837px;
+    display: flex;
+}
+.contactanos-wrapper *
+{
+    text-decoration: none;
+}
+
+.contact-methods
+{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contact-methods .whatsapp,
+.contact-methods .instagram,
+.contact-methods .facebook
+{
+    font-size: 2rem;
+    padding: 20px;
+    width: 700px;
+    height: 200px;
+    border-radius: 1000px;
+    display: flex;
+    align-items: center;
+    background: var(--clr);
+    color: white;
+    cursor: pointer;
+}
+
+.contact-methods > * > i
+{
+    border-radius: 50%;
+    position: relative;
+    top: 3px;
+    width: 60px;
+    height: 60px;
+    font-size: 5rem;
+    text-align: center;
+    line-height: 60px;
+    margin: 0px 30px 0px 60px;
+}
+.contact-methods .contact-information
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.contact-methods .contact-information .contact-information-top 
+{
+    position: relative;
+    display: flex;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+.contact-methods .contact-information .contact-information-top span::before
+{
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    content: '';
+    background-color: white;
+    bottom: -10px;
+    left: 50%;
+    translate: -50%;
+}
+.contact-methods .contact-information .contact-information-top span
+{
+    width: 100%;
+    text-align: center;
+}
+
+.contact-methods .contact-information .contact-schedules
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1rem;
+    height: 100%;
+    width: 100%;
+    margin-top: 20px;
+}
+.contact-methods .contact-information .contact-schedules span
+{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
+.contact-form
+{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+.contact-form form 
+{
+    /* width: 100%; */
+    margin-right: 100px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.contact-form form .form-title
+{
+    font-size: 2.5rem;
+}
+.contact-form form .input-container
+{
+    display: flex;
+    flex-direction: column;
+}
+.contact-form form .input-container input
+{
+    padding: 10px 20px;
+    border: none;
+    background-color: #ddd;
+    font-size: 1rem;
+    width: 350px;
+}
+.contact-form form .input-container textarea
+{
+    width: 350px;
+    padding: 10px 20px;
+    height: 350px;
+    border: none;
+    background-color: #ddd;
+    resize: none;
+}
+.contact-form form .input-container textarea:focus,
+.contact-form form .input-container input:focus
+{
+    border: 1px solid black;
+    outline: none;
+}
+
+.contact-form form button
+{
+    padding: 10px 20px;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+}
+.contact-form form button:active
+{
+    background-color: #aaa;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .contact-form {
+        order: -1;
+        margin: 0;
+    }
+
+    .contact-form form
+    {
+        margin: 50px 0px 0px;
+        
+    }
+
+    .contact-form form .form-title {
+        font-size: 2rem; /* Adjust the font size of the form title */
+    }
+    
+    .contact-form form .input-container input,
+    .contact-form form .input-container textarea {
+        padding: 8px 16px; /* Adjust the padding of input fields */
+        font-size: 0.9rem; /* Adjust the font size of input fields */
+    }
+    
+    .contact-form form button {
+        padding: 8px 16px; /* Adjust the padding of the button */
+        font-size: 0.9rem; /* Adjust the font size of the button */
+    }
+
+
+
+
+    .contactanos-wrapper 
+    {
+        flex-direction: column;
+        overflow: hidden;
+        height: auto;
+    }
+    
+    .contact-methods
+    {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-direction: row;
+        height: 200px;
+    }
+    .contact-methods .whatsapp,
+    .contact-methods .facebook,
+    .contact-methods .instagram {
+        width: 80px;
+        height: 80px;
+        position: relative;
+    }
+    .contact-methods > * > i
+    {
+        margin: 0;
+        padding: 0;
+        font-size:3rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+    }
+
+    .contact-methods > * .contact-information 
+    {
+        display: none;
+    }
+
+}

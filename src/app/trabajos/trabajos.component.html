@@ -1,0 +1,31 @@
+<div class="trabajos-wrapper" #trabajosWrapper>
+    <div 
+    *ngFor="let trabajo of trabajos; let i = index" 
+    [style]="{'--index': i}" 
+    [style.backgroundImage]="'url(' + trabajo.imagenUrl + ')'" 
+    class="trabajo"
+    (click)="activateSlide(trabajo)"
+    [class.open-slide]="trabajo.isOpen">
+        <div class="texto">
+            <div class="nombre">
+                {{trabajo.nombre}}
+            </div>
+            <div class="etiquetas">
+                <span class="etiqueta" *ngFor="let etiqueta of trabajo.etiquetas, let last = last">
+                    {{etiqueta.etiquetaNombre}}
+                    <b *ngIf="!last">|</b>
+                </span>
+            </div>
+            <div class="imagenes" *ngIf="trabajo.isOpen">
+                <div class="imagen-wrapper" *ngFor="let imagen of trabajo.etiquetas, let i = index" [style]="{'--image-index': i}">
+                    <div class="imagen" (click)="showImage($event, imagen)"></div>
+                    <div class="descripcion">{{imagen.etiquetaNombre}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="image-overlay" *ngIf='openedImage' (click)="closeOverlay()" #imageOverlay>
+        <div class="image-overlay-view" [style.background-image]="'url(' + openedImage + ')'"><span>{{openedImage}}</span></div>
+    </div>
+</div>

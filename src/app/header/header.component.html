@@ -1,0 +1,15 @@
+<header>
+    <a class="logo">
+        <div class="logo-link" routerLink="/inicio" routerLinkActive="active-link">
+            <span class="main-word">La elianteleria</span>
+            <span class="secondary-text">publicidad</span>
+        </div>
+    </a>
+    <div class="hamburger-menu" (click)="toggleNav()">
+        &#9776;
+    </div>
+    <nav [ngClass]="{'open': navOpen}">
+        <a routerLink="/trabajos" routerLinkActive="active-link" (click)="toggleNav()">Trabajos</a>
+        <a routerLink="/contactanos" routerLinkActive="active-link" (click)="toggleNav()">Contactanos</a>
+    </nav>
+</header>
